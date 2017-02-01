@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+    <title>Solicitud de crédito</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/Greudys/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <script type='text/javascript' src='~/Scripts/Greudys/rfc.js'></script>
+	
+  </head>
+  <body>
+    <div class='container'>
+
+			<section id="wizard">
+			  <div class="page-header">
+	            <h1>Solicitud de crédito</h1>
+	          </div>
+				
+				<div id="tabsleft" class="tabbable tabs-left">
+					<ul>
+					  	<li><a href="#tabsleft-tab1" data-toggle="tab">Datos solicitante</a></li>
+						<li><a href="#tabsleft-tab2" data-toggle="tab">Información domicilio</a></li>
+						<li><a href="#tabsleft-tab3" data-toggle="tab">Información laboral</a></li>
+						<li><a href="#tabsleft-tab4" data-toggle="tab">Otros datos</a></li>
+						<li><a href="#tabsleft-tab5" data-toggle="tab">Datos beneficiario</a></li>
+						<li><a href="#tabsleft-tab6" data-toggle="tab">Información de pago</a></li>
+					</ul>
+                    <div id="bar" class="progress progress-info progress-striped">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                    </div>
+                    <form class="left" action="#" method="post" name="formulario1">
+						<div class="tab-content">
+						    <div class="tab-pane" id="tabsleft-tab1">
+						    	<div class="col-xs-12">
+							      	<div class="col-md-12">
+						                <h3>Datos del solicitante</h3>
+
+						                <div class="form-group">
+						                    <input type="date" id="txtFechaCreacion" name="txtFechaCreacion" value="" maxlength="100" class="form-control" placeholder="Ingresa la fecha de creación">
+						                                       
+						                </div>
+
+						                <div class="form-group">
+						                    <label>Nombre(s)</label>
+						                    <input type="text" id="nombre" name="nombre" value="" maxlength="100" class="form-control" placeholder="Ingresa tu nombre" required>
+						                                       
+						                </div>
+
+						                <div class="form-group">
+						                    <label>Apellido paterno</label>
+						                    <input type="text" id="apellidoPaterno" name="apellidoPaterno" value="" maxlength="100" class="form-control" placeholder="Ingresa apellido paterno">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Apellido materno</label>
+						                    <input type="text" id="apellidoMaterno" name="apellidoMaterno" value="" maxlength="100" class="form-control" placeholder="Ingresa apellido materno">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Sexo</label>
+						                    <select id="sexo" name="sexo" class="form-control">
+						                        <option value="Masculino">Masculino</option>
+						                        <option value="Femenino">Femenino</option>
+						                    </select>
+						                </div>
+						                <div class="form-group">
+						                    <label>Fecha de nacimiento</label>
+						                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>RFC</label>
+						                    <input type="text" id="rfc" name="rfc" value="" maxlength="100" class="form-control" placeholder="Ingresa tu RFC">
+						                    <input type="button" name="" value="Generar RFC" class="btn btn-primary" onclick="calculaRFC();">
+						                                       
+						                </div>
+
+						                <div class="form-group">
+						                    <label>CURP</label>
+						                    <input type="text" id="curp" name="curp" value="" maxlength="100" class="form-control" placeholder="Ingresa tu CURP">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Ciudad de nacimiento</label>
+						                    <input type="text" id="ciudadNacimiento" name="ciudadNacimiento" value="" maxlength="100" class="form-control" placeholder="Ingresa tu ciudad de nacimiento">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Estado de nacimiento</label>
+						                    <input type="text" id="estadoNacimiento" name="estadoNacimiento" value="" maxlength="100" class="form-control" placeholder="Ingresa tu estado de nacimiento">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Estado civil</label>
+						                    <select id="estadoCivil" name="estadoCivil" class="form-control">
+						                        <option value="">Seleccione</option>
+						                        <option value="Soltero">Soltero</option>
+						                        <option value="Casado">Casado</option>
+						                        <option value="Divorciado">Divorciado</option>
+						                        <option value="Viudo">Viudo</option>
+						                        <option value="Unión Libre">Unión Libre</option>
+						                    </select>           
+						                </div>
+						                <div class="form-group">
+						                    <label>Profesión</label>
+						                    <input type="text" id="profesion" name="profesion" value="" maxlength="100" class="form-control" placeholder="Ingresa tu profesión">
+						                                       
+						                </div>
+						                <div>
+						                    <label>¿Cargos dentro del gobierno municipal, federal o estatal en los últimos 4 años?</label>
+						                    <select id="cargo" name="cargos" class="form-control">
+						                        <option value="">Seleccione</option>
+						                        <option value="Si">Si</option>
+						                        <option value="No">No</option>
+						                    </select>
+						                </div>
+						                <div class="form-group">
+						                    <label>Definir cargo</label>
+						                    <textarea id="detalleCargo" name="detalleCargo" cols="" rows="" class="form-control"></textarea>            
+						                </div>
+						                <div class="form-group">
+						                    <label>Correo electrónico</label>
+						                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" class="form-control">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Teléfono</label>
+						                    <input type="text" id="telefono" name="telefono" value="" maxlength="100" class="form-control" placeholder="Ingresa tu número telefónico">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Teléfono celular</label>
+						                    <input type="text" id="telefonoCelular" name="telefonoCelular" value="" maxlength="100" class="form-control" placeholder="Ingresa tu número celular">
+						                                       
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="tab-pane" id="tabsleft-tab2">
+						       <div class="col-xs-12">
+						         <div class="col-md-12">
+							      <h3> Datos de domicilio del solicitante</h3>
+					                <div class="form-group">
+					                    <label>Calle</label>
+					                    <input type="text" id="calle" name="calle" value="" maxlength="100" class="form-control" placeholder="Ingresa la calle de tu dirección de domicilio">
+					                                       
+					                </div>
+					                <div class="form-group">
+					                    <label>Número</label>
+					                    <input type="text" id="numero" name="numero" value="" maxlength="100" class="form-control" placeholder="Ingresa el número de domicilio">
+					                                       
+					                </div>
+					                <div class="form-group">
+					                    <label>Colonia</label>
+					                    <input type="text" id="colonia" name="colonia" value="" maxlength="100" class="form-control" placeholder="Ingresa la Colonia de domicilio">
+					                                       
+					                </div>
+					                <div class="form-group">
+					                    <label>Código postal</label>
+					                    <input type="text" id="codigoPostal" name="codigoPostal" value="" maxlength="5" class="form-control" placeholder="Ingresa el código postal de domicilio">
+					                                       
+					                </div>
+					                <div class="form-group">
+					                    <label>Ciudad</label>
+					                    <input type="text" id="ciudad" name="ciudad" value="" maxlength="100" class="form-control" placeholder="Ingresa la ciudad de domicilio">
+					                                       
+					                </div>
+					                <div class="form-group">
+					                    <label>Estado</label>
+					                    <input type="text" id="estado" name="estado" value="" maxlength="100" class="form-control" placeholder="Ingresa el estado de domicilio">                
+					                </div>
+				                </div>
+				              </div>
+						    </div>
+							<div class="tab-pane" id="tabsleft-tab3">
+								<div class="col-xs-12">
+						            <div class="col-md-12">
+						                <h3> Información laboral</h3>
+						                <div class="form-group">
+						                    <label>Empresa</label>
+						                    <input type="text" id="empresa" name="empresa" value="" maxlength="100" class="form-control" placeholder="Ingresa nombre de tu empresa">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Giro</label>
+						                    <input type="text" id="giro" name="giro" value="" maxlength="100" class="form-control" placeholder="Ingresa Giro">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Puestos</label>
+						                    <input type="text" id="puestos" name="puestos" value="" maxlength="100" class="form-control" placeholder="Ingresa puesto">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Funciones</label>
+						                    <input type="text" id="funciones" name="funciones" value="" maxlength="100" class="form-control" placeholder="Ingresa tus funciones">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Calle</label>
+						                    <input type="text" id="calleEmpresa" name="calleEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa callle de empresa">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Número</label>
+						                    <input type="text" id="numeroEmpresa" name="numeroEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa número de empresa">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Colonia</label>
+						                    <input type="text" id="coloniaEmpresa" name="coloniaEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa colonia">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Código postal</label>
+						                    <input type="text" id="postalEmpresa" name="postalEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa código postal">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Ciudad</label>
+						                    <input type="text" id="ciudadEmpresa" name="ciudadEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa ciudad">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Estado</label>
+						                    <input type="text" id="estadoEmpresa" name="estadoEmpresa" value="" maxlength="100" class="form-control" placeholder="Ingresa estado">
+						                                       
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+							<div class="tab-pane" id="tabsleft-tab4">
+								<div class="col-xs-12">
+						            <div class="col-md-12">
+						                <h3> Otros datos</h3>
+						                <div class="form-group">
+						                    <label>¿Has fumado en los últimos 12 meses?</label>
+						                    <select id="fumado" name="fumado" class="form-control">
+						                        <option value="Si">Si</option>
+						                        <option value="No">No</option>
+						                    </select>
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Deportes o aficiones</label>
+						                    <input type="text" id="deportesAficiones" name="deportesAficiones" value="" maxlength="100" class="form-control" placeholder="Ingresa tus hobbies">
+						                                       
+						                </div>
+						                <div class="form-group">
+						                    <label>Ingresos</label>
+						                    <input type="text" id="" name="" value="" maxlength="100" class="form-control" placeholder="Ingresa tus ingresos">
+						                                       
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+							<div class="tab-pane" id="tabsleft-tab5">
+								<div class="col-xs-12">
+						            <div class="col-md-12">
+						                <h3> Datos del beneficiario</h3>
+						                <div class="form-group">
+						                    <label>Nombre(s)</label>
+						                    <input type="text" id="nombreBeneficiario" name="nombreBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa el nombre">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Apellido paterno</label>
+						                    <input type="text" id="apellidoPaternoBeneficiario" name="apellidoPaternoBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa apellido paterno">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Apellido materno</label>
+						                    <input type="text" id="apellidoMaternoBeneficiario" name="apellidoMaternoBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa apellido materno">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>RFC</label>
+						                    <input type="text" id="rfcBeneficiario" name="rfcBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa RFC">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>CURL</label>
+						                    <input type="text" id="curlBeneficiario" name="curlBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa CURL">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Sexo</label>
+						                    <select id="sexoBeneficiario" name="sexoBeneficiario" class="form-control">
+						                        <option value="Masculino">Masculino</option>
+						                        <option value="Femenino">Femenino</option>
+						                    </select>                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Fecha de nacimiento</label>
+						                    <input type="date" id="fechaNacimientoBeneficiario" name="fechaNacimientoBeneficiario" value="" maxlength="100" class="form-control">                      
+						                </div>
+						                <div class="form-group">
+						                    <label>Ciudad de nacimiento</label>
+						                    <input type="text" id="ciudadNacimientoBeneficiario" name="ciudadNacimientoBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa ciudad de nacimiento">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Estado de nacimiento</label>
+						                    <input type="text" id="estadoNacimientoBeneficiario" name="estadoNacimientoBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa estado de nacimiento">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Profesión</label>
+						                    <input type="text" id="profesionBeneficiario" name="profesionBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa la profesión">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Estado civil</label>
+						                    <select id="estadoCivilBeneficiario" name="estadoCivilBeneficiario" class="form-control">
+						                        <option value="Soltero">Soltero</option>
+						                        <option value="Casado">Casado</option>
+						                        <option value="Divorciado">Divorciado</option>
+						                        <option value="Viudo">Viudo</option>
+						                        <option value="Unión Libre">Unión Libre</option>
+						                    </select>                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Cargos dentro del gobierno municipal, federal o estatal en los últimos 4 años</label>
+						                    <select id="cargoGobiernoBeneficiario" name="cargoGobiernoBeneficiario" class="form-control">
+						                        <option value="Si">Si</option>
+						                        <option value="No">No</option>
+						                    </select>                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Definir cargo</label>
+						                    <textarea id="detalleCargoGobiernoBeneficiario" name="detalleCargoGobiernoBeneficiario" cols="" rows="" class="form-control"> </textarea>                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Correo electrónico</label>
+						                    <input type="email" id="emailBeneficiario" name="emailBeneficiario" maxlength="100" class="form-control" placeholder="Ingresa el correo electrónico">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Teléfono</label>
+						                    <input type="text" id="telefonoBeneficiario" name="telefonoBeneficiario" value="" maxlength="100" class="form-control" placeholder="Ingresa el numero telefónico">                           
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+							<div class="tab-pane" id="tabsleft-tab6">
+								<div class="col-xs-12">
+						            <div class="col-md-12">
+						                <h3> Información de pago</h3>
+						                <div class="form-group">
+						                    <label>Tipo de tarjeta</label>
+						                    <select id="tipoTarjeta" name="tipoTarjeta" class="form-control">
+						                        <option value="Visa">Visa</option>
+						                        <option value="Mastercard">Mastercard</option>
+						                    </select>                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Banco</label>
+						                    <input type="text" id="banco" name="banco" value="" maxlength="100" class="form-control" placeholder="Ingresa el nombre del banco">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Nro de tarjeta</label>
+						                    <input type="text" id="numeroTarjeta" name="numeroTarjeta" value="" maxlength="16" class="form-control" placeholder="Ingresa apellido paterno">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>Fecha de vencimiento</label>
+						                    <input type="date" id="fechaVencimientoTarjeta" name="fechaVencimientoTarjeta" value="" class="form-control">                           
+						                </div>
+						                <div class="form-group">
+						                    <label>CVV</label>
+						                    <input type="text" id="cvvTarjeta" name="cvvTarjeta" value="" maxlength="4" class="form-control" placeholder="Ingresa el CVV de la tarjeta">                           
+						                </div>
+						                
+						            </div>
+						        </div>
+						    </div>
+							<ul class="pager wizard">
+								<li class="previous"><a href="javascript:;">Previous</a></li>
+							  	<li class="next"><a href="javascript:;">Next</a></li>
+
+								<li class="next finish" style="display:none;"><a href="javascript:;">Finish</a></li>
+							</ul>
+						</div>
+					</form>
+					
+				</div>
+
+			</section>
+	</div>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!--
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/jquery.bootstrap.wizard.js"></script>
+	<script src="bootstrap/js/prettify.js"></script>
+	<script src="bootstrap/js/formulario.js"></script>
+    -->
+
+      <script src="~/Scripts/Greudys/bootstrap.min.js"></script>
+      <script src="~/Scripts/Greudys/jquery.bootstrap.wizard.js"></script>
+      <script src="~/Scripts/Greudys/prettify.js"></script>
+      <script src="~/Scripts/Greudys/formulario.js"></script>
+  </body>
+</html>
