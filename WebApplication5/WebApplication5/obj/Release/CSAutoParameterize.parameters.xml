@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebApplication5-20161226094129.mdf;Initial Catalog=aspnet-WebApplication5-20161226094129;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MyCRMServer1-Web.config Connection String" description="MyCRMServer1 Connection String used in web.config by the application to access the database." defaultValue="AuthType=Office365;Username=admin@tusconsultores.onmicrosoft.com; Password=MSDcrm123;Url=https://tusconsultores.crm2.dynamics.com" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MyCRMServer1']/@connectionString" />
+  </parameter>
+  <parameter name="MyCRMServer2-Web.config Connection String" description="MyCRMServer2 Connection String used in web.config by the application to access the database." defaultValue="AuthType=Office365;Username=admin@mps150783.onmicrosoft.com; Password=pass@word1;Url=https://mps150783.crm.dynamics.com" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MyCRMServer2']/@connectionString" />
+  </parameter>
+</parameters>

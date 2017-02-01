@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WebMVC456" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:mvc456dbserver.database.windows.net,1433;Initial Catalog=WebMVC456_db;User Id=julio@mvc456dbserver;Password=Bd123456" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="MyCRMServer1-Web.config Connection String" description="MyCRMServer1 Connection String used in web.config by the application to access the database." value="AuthType=Office365;Username=admin@tusconsultores.onmicrosoft.com; Password=MSDcrm123;Url=https://tusconsultores.crm2.dynamics.com" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MyCRMServer1']/@connectionString" />
+  </parameter>
+  <parameter name="MyCRMServer2-Web.config Connection String" description="MyCRMServer2 Connection String used in web.config by the application to access the database." value="AuthType=Office365;Username=admin@mps150783.onmicrosoft.com; Password=pass@word1;Url=https://mps150783.crm.dynamics.com" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jim\\documents\\visual\ studio\ 2015\\Projects\\WebApplication5\\WebApplication5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MyCRMServer2']/@connectionString" />
+  </parameter>
+</parameters>
